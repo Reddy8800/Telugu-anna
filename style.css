@@ -4,29 +4,39 @@ html, body {
   padding: 0;
   height: 100%;
   overflow-x: hidden;
-  background-color: #000 !important;
   font-family: Arial, sans-serif;
   color: #fff;
+  background: #000; /* fallback */
 }
 
-/* FIX MOBILE HEIGHT ISSUE */
+/* MAIN BODY FIX */
 body {
-  min-height: 100dvh; /* IMPORTANT FIX */
-  text-align: center;
-
-  background-image: url('cricket-bg.jpg'), url('bg.jpg');
-  background-size: cover, cover;
-  background-position: center, center;
-  background-repeat: no-repeat, no-repeat;
-
-  background-color: rgba(0, 0, 0, 0.6);
-  background-blend-mode: darken;
-
+  min-height: 100dvh; /* FIX for mobile extra space */
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+
+  background-image: url('cricket-bg.jpg'), url('bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* IMPORTANT FIX */
+  position: relative;
 }
 
-/* MAIN WRAPPER */
+/* DARK OVERLAY FIX */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.6);
+  z-index: -1;
+}
+
+/* Container */
 .container {
   flex: 1;
   padding: 40px 20px;
@@ -34,6 +44,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-sizing: border-box; /* prevents layout overflow */
 }
 
 /* Title */
@@ -42,6 +53,12 @@ body {
   font-weight: bold;
   margin-bottom: 10px;
   color: #ffd400;
+}
+.sub-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #d4ff00;
 }
 
 /* Tagline */
@@ -60,16 +77,6 @@ body {
   text-shadow: 0 6px 18px rgba(0,0,0,0.6);
 }
 
-.big-counter.pulse {
-  animation: pulse 360ms ease-out;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.06); }
-  100% { transform: scale(1); }
-}
-
 /* Stats */
 .stats {
   margin-top: 20px;
@@ -78,14 +85,13 @@ body {
 
 .stats p {
   margin: 10px 0;
-  color: #fff;
 }
 
-/* CTA BUTTON — FIXED CENTER */
+/* CTA BUTTON */
 .cta-btn {
   display: block;
   width: 90%;
-  max-width: 400px; /* keeps button centered */
+  max-width: 400px;
   margin: 20px auto;
   padding: 18px 25px;
 
@@ -110,7 +116,6 @@ body {
   color: #ffd400;
   font-weight: 900;
   font-size: 22px;
-  margin-left: 6px;
 }
 
 /* Footer */
