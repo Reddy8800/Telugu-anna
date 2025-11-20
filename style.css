@@ -1,36 +1,31 @@
-/* RESET */
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow-x: hidden;
-  background-color: #000 !important;
-  font-family: Arial, sans-serif;
-  color: #fff;
-}
-
-/* FIX MOBILE HEIGHT ISSUE */
 body {
-  min-height: 100dvh; /* IMPORTANT FIX */
+  margin: 0;
+  font-family: Arial, sans-serif;
   text-align: center;
+  color: #fff;
+
+  /* Force full-height background */
+  min-height: 100vh;
 
   background-image: url('cricket-bg.jpg'), url('bg.jpg');
-  background-size: cover, cover;
-  background-position: center, center;
-  background-repeat: no-repeat, no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
+  /* Dark overlay */
   background-color: rgba(0, 0, 0, 0.6);
   background-blend-mode: darken;
 
+  /* Fix bottom gray area on long pages */
   display: flex;
   flex-direction: column;
 }
 
-/* MAIN WRAPPER */
 .container {
-  flex: 1;
   padding: 40px 20px;
 
+  /* This makes content center + pushes button down */
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -44,14 +39,25 @@ body {
   color: #ffd400;
 }
 
-/* Tagline */
 .tagline {
   font-size: 18px;
   color: #ddd;
   margin-bottom: 30px;
 }
 
-/* Counter */
+/* Badge */
+.badge-circle {
+  width: 160px;
+  height: 160px;
+  background: url('badge.png');
+  background-size: cover;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .big-counter {
   color: #ffd400;
   font-weight: 900;
@@ -81,20 +87,16 @@ body {
   color: #fff;
 }
 
-/* CTA BUTTON — FIXED CENTER */
+/* CTA BUTTON — CENTER + BOTTOM FIXED */
 .cta-btn {
   display: block;
   width: 90%;
-  max-width: 400px; /* keeps button centered */
-  margin: 20px auto;
+  margin: 20px auto 0;
   padding: 18px 25px;
-
   font-size: 20px;
   font-weight: bold;
-
   text-decoration: none;
   text-align: center;
-
   color: #000;
   background: #ffd400;
   border-radius: 12px;
