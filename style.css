@@ -1,10 +1,17 @@
+/* GLOBAL FIX — prevents page from becoming wider than screen */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* BODY */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   text-align: center;
   color: #fff;
 
-  /* Force full-height background */
   min-height: 100vh;
 
   background-image: url('cricket-bg.jpg'), url('bg.jpg');
@@ -12,26 +19,25 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 
-  /* Dark overlay */
   background-color: rgba(0, 0, 0, 0.6);
   background-blend-mode: darken;
 
-  /* Fix bottom gray area on long pages */
   display: flex;
   flex-direction: column;
 }
 
+/* CONTAINER */
 .container {
   padding: 40px 20px;
-
   flex: 1;
+
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;   /* FIXED */
-  align-items: center;           /* Ensures perfect centering */
+  justify-content: space-between;
+  align-items: center; /* IMPORTANT FIX */
 }
 
-/* Title */
+/* TITLES */
 .title {
   font-size: 40px;
   font-weight: bold;
@@ -39,25 +45,14 @@ body {
   color: #ffd400;
 }
 
+/* TAGLINE */
 .tagline {
   font-size: 18px;
   color: #ddd;
   margin-bottom: 30px;
 }
 
-/* Badge */
-.badge-circle {
-  width: 160px;
-  height: 160px;
-  background: url('badge.png');
-  background-size: cover;
-  margin: 0 auto 20px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+/* COUNTER */
 .big-counter {
   color: #ffd400;
   font-weight: 900;
@@ -66,17 +61,7 @@ body {
   text-shadow: 0 6px 18px rgba(0,0,0,0.6);
 }
 
-.big-counter.pulse {
-  animation: pulse 360ms ease-out;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.06); }
-  100% { transform: scale(1); }
-}
-
-/* Stats */
+/* STATS */
 .stats {
   margin-top: 20px;
   font-size: 18px;
@@ -84,29 +69,28 @@ body {
 
 .stats p {
   margin: 10px 0;
-  color: #fff;
 }
 
-/* CTA BUTTON — ALWAYS CENTER */
+/* CTA BUTTON – PERFECTLY CENTERED */
 .cta-btn {
   display: block;
   width: 90%;
+  max-width: 350px;
+  margin: 20px auto 0;
+
   padding: 18px 25px;
-  margin-top: 20px;
-
-  margin-left: auto;   /* ensures perfect centering */
-  margin-right: auto;  /* ensures perfect centering */
-
   font-size: 20px;
   font-weight: bold;
+
   text-decoration: none;
   text-align: center;
+
   color: #000;
   background: #ffd400;
   border-radius: 12px;
 }
 
-/* Timer */
+/* TIMER */
 .timer-text {
   margin-top: 15px;
   font-size: 18px;
@@ -119,7 +103,7 @@ body {
   margin-left: 6px;
 }
 
-/* Footer */
+/* FOOTER */
 .footer-text {
   margin-top: 25px;
   font-size: 20px;
