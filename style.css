@@ -3,28 +3,24 @@ body {
   font-family: Arial, sans-serif;
   text-align: center;
   color: #fff;
-
-  /* Force full-height background */
   min-height: 100vh;
 
-  background-image: url('cricket-bg.jpg'), url('bg.jpg');
+  /* USE ONLY bg.jpg (because this is the only file you have) */
+  background-image: url('bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  /* Dark overlay */
+  /* Overlay */
   background-color: rgba(0, 0, 0, 0.6);
   background-blend-mode: darken;
 
-  /* Fix bottom gray area on long pages */
   display: flex;
   flex-direction: column;
 }
 
 .container {
   padding: 40px 20px;
-
-  /* This makes content center + pushes button down */
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -45,19 +41,7 @@ body {
   margin-bottom: 30px;
 }
 
-/* Badge */
-.badge-circle {
-  width: 160px;
-  height: 160px;
-  background: url('badge.png');
-  background-size: cover;
-  margin: 0 auto 20px;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
+/* Counter */
 .big-counter {
   color: #ffd400;
   font-weight: 900;
@@ -87,7 +71,7 @@ body {
   color: #fff;
 }
 
-/* CTA BUTTON — CENTER + BOTTOM FIXED */
+/* CTA BUTTON */
 .cta-btn {
   display: block;
   width: 90%;
@@ -112,7 +96,6 @@ body {
   color: #ffd400;
   font-weight: 900;
   font-size: 22px;
-  margin-left: 6px;
 }
 
 /* Footer */
